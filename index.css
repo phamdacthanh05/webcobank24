@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-forest: #2C5E43;   /* Xanh lá đại ngàn */
+  --primary-light: #4A7C59;    /* Xanh lá sáng nhạt */
+  --earth-brown: #6F4E37;      /* Nâu vỏ cây/gỗ */
+  --earth-dark: #3E2723;       /* Nâu đất đậm */
+  --sand-bg: #F4F6F0;          /* Trắng kem/be dịu mát */
+  --text-color: #2D312E;       /* Chữ xám đen tự nhiên */
+  --white: #FFFFFF;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow: 0 4px 20px rgba(44, 94, 67, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--sand-bg);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* --- Thanh điều hướng (Navbar) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: rgba(244, 246, 240, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(44, 94, 67, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-forest);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-left: 2rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+  color: var(--primary-forest);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--earth-brown);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- Khu vực Hero (Banner đại ngàn) --- */
+.hero {
+  height: 80vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(44, 94, 67, 0.4), rgba(62, 39, 35, 0.6)), 
+              url('https://thanhnien.mediacdn.vn/Uploaded/nhanlh/2022_09_22/dji-0134-hdr-8794.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 0 1rem;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.btn-forest {
+  text-decoration: none;
+  background-color: var(--primary-forest);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(44, 94, 67, 0.3);
+}
+
+.btn-forest:hover {
+  background-color: var(--earth-brown);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(111, 78, 55, 0.4);
+}
+
+/* --- Section Chung --- */
+section {
+  padding: 5rem 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-forest);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+/* --- Giới thiệu (Intro Section) --- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2s 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.intro-text h2 {
+  font-size: 2.2rem;
+  color: var(--earth-dark);
+  margin-bottom: 1.5rem;
+}
+
+.intro-text p {
+  margin-bottom: 1rem;
+  color: #4A504B;
+}
+
+.intro-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.highlight-item {
+  background: var(--white);
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-bottom: 3px solid var(--primary-light);
+  transition: var(--transition);
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+  border-bottom-color: var(--earth-brown);
+}
+
+.highlight-item h4 {
+  color: var(--primary-forest);
+  margin: 0.5rem 0;
+}
+
+.highlight-item p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.intro-img img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(44, 94, 67, 0.15);
+}
+
+/* --- Không gian phòng nghỉ (Rooms) --- */
+.rooms {
+  background-color: rgba(44, 94, 67, 0.03);
+}
+
+.room-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.room-item {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  padding-bottom: 2rem;
+}
+
+.room-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(44, 94, 67, 0.12);
+}
+
+.room-img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
+}
+
+.room-item:hover .room-img {
+  transform: scale(1.03);
+}
+
+.room-item h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  color: var(--earth-dark);
+  font-size: 1.5rem;
+}
+
+.room-item p {
+  padding: 0 1.5rem 1.5rem;
+  color: #555;
+}
+
+.price-badge {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  background-color: rgba(111, 78, 55, 0.1);
+  color: var(--earth-brown);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Khối liên hệ nhanh (CTA Contact) --- */
+.contact {
+  background: linear-gradient(135deg, var(--primary-forest), var(--earth-dark));
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem;
+  margin: 2rem 0;
+}
+
+.contact h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.contact a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--primary-forest);
+  padding: 1rem 3rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.contact a:hover {
+  background-color: var(--sand-bg);
+  transform: scale(1.05);
+}
+
+/* --- Chân trang (Footer) --- */
+footer {
+  background-color: #1E2B22;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
+  border-top: 4px solid var(--earth-brown);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* --- Hỗ trợ Responsive nhẹ --- */
+@media (max-width: 992px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .intro-img img {
+    height: 350px;
+  }
+  section {
+    padding: 4rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-links a {
+    margin: 0 0.8rem;
+  }
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .room-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .intro-highlight {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
