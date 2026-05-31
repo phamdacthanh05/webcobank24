@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Liên hệ | Tây Nguyên Homestay</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo"> Tây Nguyên Homestay</a>
+  <div class="nav-links">
+    <a href="index.html">Trang chủ</a>
+    <a href="act.html">Trải nghiệm</a>
+    <a href="contact.html">Liên hệ</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <h1>Liên hệ với chúng tôi</h1>
+  <p>Để lại lời nhắn, chúng tôi sẽ đồng hành cùng bạn trong hành trình khám phá đại ngàn</p>
+</section>
+
+<div class="contact-wrapper">
+
+  <div class="contact-info">
+    <h3>Tây Nguyên Homestay</h3>
+    <p>Rừng già - Bản Lác - Đắk Lắk</p>
+    <div class="info-detail">
+      <div class="info-item">
+        <div>
+          <h4></i>Địa chỉ</h4>
+          <p>Số 567 đường Lê Duẩn, phường Ea Kao, thành phố Buôn Ma Thuột, tỉnh Đắk Lắk</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div>
+          <h4></i>Điện thoại / Zalo</h4>
+          <p>0912.345.678 (Ms. FatBeo)</p>
+          <p>0945.987.654 (Lễ tân Q.Dieu)</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div>
+          <h4></i>Email</h4>
+          <p>dacthanh0605@gmail.com</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div>
+          <h4></i>Giờ tư vấn</h4>
+          <p>08:00 - 21:00 mỗi ngày (kể cả lễ)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>GỬI TIN NHẮN ĐẾN TÂY NGUYÊN HOMESTAY</h3>
+    <p>Chúng tôi phản hồi trong vòng 2 giờ làm việc.</p>
+    
+    <form action="contact.php" method="POST">
+    <div class="input-group">
+        <label>Họ và tên *</label>
+        <input type="text" name="fullname" placeholder="Tên của người đặt" required>
+    </div>
+    <div class="input-group">
+        <label>Email *</label>
+        <input type="email" name="email" placeholder="ban@example.com" required>
+    </div>
+    <div class="input-group">
+        <label>Số điện thoại</label>
+        <input type="tel" name="phone" placeholder="0912 345 678">
+    </div>
+    <div class="input-group">
+        <label>Chủ đề</label>
+        <select name="subject">
+            <option value="Đặt phòng homestay">Đặt phòng homestay</option>
+            <option value="Hoạt động cắm trại, câu cá">Hoạt động cắm trại, câu cá</option>
+            <option value="Cho thú cưng ăn & thiên nhiên">Cho thú cưng ăn & thiên nhiên</option>
+            <option value="Hợp tác & sự kiện">Hợp tác & sự kiện</option>
+            <option value="Góp ý dịch vụ">Góp ý dịch vụ</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Lời nhắn *</label>
+        <textarea name="message" rows="4" placeholder="Xin chào, tôi muốn đặt trải nghiệm cắm trại..." required></textarea>
+    </div>
+    
+    <button type="submit" class="btn-submit">Gửi liên hệ ngay</button>
+</form>
+  </div>
+
+</div>
+
+<footer>
+  <p>Tây Nguyên Homestay | Lê Duẩn, Ea Kao, Buôn Ma Thuột</p>
+  <p>Hotline: 0911.222.333 | dacthanh0605@gmail.com</p>
+  <p>© 2026 - Học phần Web cơ bản | Đại học Tây Nguyên</p>
+</footer>
+</body>
+</html>

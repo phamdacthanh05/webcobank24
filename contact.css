@@ -1,0 +1,312 @@
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+    /* --- Gắn kết các biến màu sắc & reset đồng bộ với index.html --- */
+:root {
+  --primary-forest: #2C5E43;   /* Xanh lá đại ngàn */
+  --primary-light: #4A7C59;    /* Xanh lá sáng nhạt */
+  --earth-brown: #6F4E37;      /* Nâu vỏ cây/gỗ */
+  --earth-dark: #3E2723;       /* Nâu đất đậm */
+  --sand-bg: #F4F6F0;          /* Trắng kem/be dịu mát */
+  --text-color: #2D312E;       /* Chữ xám đen tự nhiên */
+  --white: #FFFFFF;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow: 0 4px 20px rgba(44, 94, 67, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--sand-bg);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* --- Đồng bộ Thanh điều hướng (Navbar) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: rgba(244, 246, 240, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(44, 94, 67, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-forest);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-left: 2rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+  color: var(--primary-forest);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--earth-brown);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- Banner trang Liên hệ (Page Hero) --- */
+.page-hero {
+  height: 40vh;
+  min-height: 280px;
+  background: linear-gradient(rgba(44, 94, 67, 0.5), rgba(62, 39, 35, 0.6)), 
+              url('https://thanhnien.mediacdn.vn/Uploaded/nhanlh/2022_09_22/dji-0134-hdr-8794.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 0 1rem;
+}
+
+.page-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  opacity: 0.95;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* --- Bố cục vùng liên hệ (Contact Wrapper) --- */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  padding: 5rem 10%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Cột thông tin liên hệ (Contact Info) --- */
+.contact-info {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--primary-forest);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: var(--primary-forest);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info > p {
+  color: var(--earth-brown);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.info-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-item h4 {
+  color: var(--earth-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* --- Cột Form gửi tin nhắn (Contact Form) --- */
+.contact-form {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--earth-brown);
+}
+
+.contact-form h3 {
+  font-size: 1.6rem;
+  color: var(--earth-dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form > p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Giao diện các ô nhập liệu (Inputs) */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(44, 94, 67, 0.2);
+  background-color: #FAFBF9;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-forest);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(44, 94, 67, 0.1);
+}
+
+.input-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233E2723' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+/* Nút Gửi liên hệ */
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary-forest);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(44, 94, 67, 0.15);
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background-color: var(--earth-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(111, 78, 55, 0.25);
+}
+
+.contact-form .note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1.2rem;
+}
+
+#submitSuccess {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary-forest);
+}
+
+/* --- Đồng bộ Chân trang (Footer) --- */
+footer {
+  background-color: #1E2B22;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
+  border-top: 4px solid var(--earth-brown);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* --- Responsive cho trang Liên hệ --- */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 5%;
+  }
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-links a {
+    margin: 0 0.8rem;
+  }
+  .contact-info, .contact-form {
+    padding: 2rem 1.5rem;
+  }
+}
