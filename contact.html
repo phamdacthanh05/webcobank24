@@ -89,7 +89,7 @@
     </div>
     
     <button type="submit" class="btn-submit">Gửi liên hệ ngay</button>
-</form>
+    </form>
   </div>
 
 </div>
@@ -99,5 +99,25 @@
   <p>Hotline: 0911.222.333 | dacthanh0605@gmail.com</p>
   <p>© 2026 - Học phần Web cơ bản | Đại học Tây Nguyên</p>
 </footer>
+
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const phone = document.querySelector('input[name="phone"]').value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Vui lòng nhập địa chỉ email hợp lệ.");
+        event.preventDefault();
+        return;
+    }
+
+    if (phone !== "" && !/^[0-9]{10,11}$/.test(phone)) {
+        alert("Số điện thoại không hợp lệ (cần nhập 10-11 chữ số).");
+        event.preventDefault();
+        return;
+    }
+});
+</script>
 </body>
 </html>
