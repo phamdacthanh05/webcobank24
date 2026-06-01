@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Thường mặc định là để trống trong XAMPP
+$password = ""; 
 $dbname = "webcobank24";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

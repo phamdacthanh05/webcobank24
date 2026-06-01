@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 } else {
-    // Nếu truy cập trực tiếp file này (không qua form) thì chuyển hướng về trang chủ
     header("Location: contact.html");
     exit();
 }
